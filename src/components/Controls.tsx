@@ -8,10 +8,11 @@ export default function Controls(props: any) {
   const { showControlButtons } = props;
 
   const controlButtons = showControlButtons
-    ? controlButtonLabels.map((buttonLabel: string) => (
+    ? controlButtonLabels.map((control) => (
         <div
-          key={buttonLabel}
-          className={`${style.consoleCtrl} ${style[buttonLabel]}`}
+          onClick={control.onClick}
+          key={control.title}
+          className={`${style.consoleCtrl} ${style[control.title]}`}
         />
       ))
     : null;
